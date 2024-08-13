@@ -8,6 +8,8 @@ public class PadlockMovement : MonoBehaviour
     PadlockColor padlockColor;
     PasswordScript passwordScript;
 
+    float axis;
+    
 
     [HideInInspector]
     public List<GameObject> dial = new List<GameObject>();
@@ -15,7 +17,7 @@ public class PadlockMovement : MonoBehaviour
     private int changeDial = 0;
 
     [HideInInspector]
-    public int[] numberArray = { 0, 0, 0, 0 };
+    public int[] numberArray = { 1, 0, 0, 0 };
     private int numberDial = 0;
     private bool itsColorActive = false;
 
@@ -37,16 +39,16 @@ public class PadlockMovement : MonoBehaviour
 
     private void Update()
     {
-        //DialMovement();
-        //RotateDial();
         passwordScript.Password();
+        DialMovement();
+        RotateDial();
     }
-//no funciona 
-   public void DialMovement(InputAction.CallbackContext context)
+   public void DialMovement()
     {
         // input izq - derc
-        if (context.phase == InputActionPhase.Performed)
+        if (Keyboard.current.dKey.wasPressedThisFrame)
         {
+            //Debug.Log(numberDial);
             itsColorActive = true;
             changeDial ++;
             numberDial += 1;
@@ -55,9 +57,10 @@ public class PadlockMovement : MonoBehaviour
                 numberDial = 0;
             }
         }
-        //if ()
-        else
+        
+        if (Keyboard.current.aKey.wasPressedThisFrame)
         {
+            //Debug.Log(numberDial);
             itsColorActive = true;
             changeDial --;
             numberDial -= 1;
@@ -85,12 +88,12 @@ public class PadlockMovement : MonoBehaviour
             }
         }
     }
-    //funciona 
-    public void RotateDial(InputAction.CallbackContext context)
+    public void RotateDial()
     {
         // inputs arriba - abajo
-        if (context.phase == InputActionPhase.Performed)
+        if (Keyboard.current.wKey.wasPressedThisFrame)
         {
+            //Debug.Log(numberArray);
             itsColorActive = true;
             moveDial = 36;
             dial[changeDial].transform.Rotate(-moveDial, 0, 0, Space.Self);
@@ -101,8 +104,7 @@ public class PadlockMovement : MonoBehaviour
                 numberArray[changeDial] = 0;
             }
         }
-        //if ()
-        else
+        if(Keyboard.current.sKey.wasPressedThisFrame)
         {
             itsColorActive = true;
             moveDial = 36;

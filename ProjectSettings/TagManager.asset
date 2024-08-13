@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - save
+  - DrawerKey
+  - Keyitem
   layers:
   - Default
   - TransparentFX

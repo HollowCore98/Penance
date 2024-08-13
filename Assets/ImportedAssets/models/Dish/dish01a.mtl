@@ -1,0 +1,7 @@
+newmtl sm0060_Dish01G1
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd sm0023_ALBM.png
+map_Ks sm0023_ALBM.png
+map_bump sm0023_NRMR.png

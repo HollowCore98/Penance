@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class ItemActions : Items
 {
+    DrawerScript drawerScript;
+
+
     [Header("ReadableItems Variables")]
     [SerializeField]
     private TextAsset inkJson;
@@ -14,8 +17,6 @@ public class ItemActions : Items
     [SerializeField]
     private GameObject textNamePanel;
     
-
-
     [Header("KeyItems Variables")]
     public ItemsData itemData;
     private string pickUp;
@@ -24,27 +25,25 @@ public class ItemActions : Items
     private string pickedItemTag;
 
 
-    //[Header("Interactable Variables")]
+    [Header("Interactable Variables")]
+    [SerializeField] private GameObject sceneItem;
+    [SerializeField] private GameObject playerItem;
     
 
-    [Header("Door variable")]
+
+    [Header("Door variables")]
     private Animator anim;
     [SerializeField] private string doorOpen, doorClose;
-    [SerializeField] private bool doorTrigger;
     private float time = 4;
-    
-
-    
-
-    private float saveTime = 4;
+   
     private NewInputs inputs;
     
-
     public void Awake()
     {
         SaveManager.Init();
         anim = GetComponent<Animator>();
         inputs = new NewInputs();
+        drawerScript = GetComponent<DrawerScript>();
     }
     
     public void ActionCall()
@@ -59,16 +58,22 @@ public class ItemActions : Items
     // items para interactuar
     public void KeyFunction()
     {
-            gameObject.SetActive(false);
-            pickUp = ("You picked " + itemData.name);
-            bottomText.text = pickUp;
-            pickedItemTag = gameObject.tag;
+        gameObject.SetActive(false);
+        sceneItem.SetActive(false);
+        playerItem.SetActive(true);
+        
+        pickUp = ("You picked " + itemData.name);
+        bottomText.text = pickUp;
+        pickedItemTag = gameObject.tag;
+        
+        
     }
 
     public void InteractFunction()
     {
-        Debug.Log("interact");
+        
     }
+
     // puertas 
     IEnumerator DoorFunction()
     {

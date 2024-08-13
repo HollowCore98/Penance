@@ -12,16 +12,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        OpenInventory();
+       
     }
 
-    void OpenInventory()
-    {
-       // if (Input.GetKeyDown(KeyCode.Tab))
-       // {
-          //  inventoryPanel.SetActive(!inventoryPanel.activeSelf);
-        //}
-    }
 
     void Load()
     {

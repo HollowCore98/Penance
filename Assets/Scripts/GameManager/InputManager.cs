@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject lighter;
+   
     
 
     private PlayerRaycast playerRaycast;

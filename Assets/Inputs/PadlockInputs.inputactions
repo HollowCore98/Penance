@@ -7,18 +7,18 @@
             "actions": [
                 {
                     "name": "Dial movement",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0b80491e-ba3b-4cfc-a1f9-a16c622185d7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
                     "name": "Dial Rotation",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "93336387-1fe7-4cdd-9bce-0ae1573cd6d0",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -27,6 +27,15 @@
                     "name": "Leave",
                     "type": "Button",
                     "id": "a075b357-4f2a-42e4-ae70-ef6b47ef3150",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "86d2b667-ae94-4846-b865-57b06be4aebc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -48,7 +57,7 @@
                 {
                     "name": "1D Axis Keyboard",
                     "id": "82bdf57e-88da-4393-995d-c0a2dcbf7d24",
-                    "path": "1DAxis",
+                    "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -57,7 +66,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "button",
                     "id": "14b82421-38f3-4116-b425-b421d7f4f2d4",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -68,7 +77,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Button",
                     "id": "9d7e0567-03e1-4003-a14a-1ac1e1fe2c48",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -114,7 +123,7 @@
                 {
                     "name": "1D Axis Keyboard",
                     "id": "ce86313f-7ea5-4fee-af0f-94811c42a201",
-                    "path": "1DAxis",
+                    "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -123,7 +132,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
+                    "name": "button",
                     "id": "8fef7b83-df0e-4f65-baae-70e3bde99c5b",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -134,7 +143,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
+                    "name": "Button",
                     "id": "b43f4fd9-a3f5-4960-bdd9-8c49b28b0517",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -176,6 +185,17 @@
                     "action": "Dial Rotation",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "000ec679-63ce-4512-89a6-b5647b75e8eb",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -7,8 +7,8 @@ public class PasswordScript : MonoBehaviour
 {
     PadlockMovement padlockMovement;
 
-    public int[] padlockPassword = { 0, 0, 0, 0 };
-    private string x;
+    public int[] padlockPassword = { 1, 0, 0, 0 };
+    
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class PasswordScript : MonoBehaviour
     {
         if (padlockMovement.numberArray.SequenceEqual(padlockPassword))
         {
-            Debug.Log("correct");
+           Debug.Log("correct");
            for (int i = 0; i< padlockMovement.dial.Count; i++)
             {
                 padlockMovement.dial[i].GetComponent<PadlockColor>().isSelected = false;

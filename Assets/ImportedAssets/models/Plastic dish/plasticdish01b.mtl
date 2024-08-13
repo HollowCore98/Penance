@@ -1,0 +1,7 @@
+newmtl sm0025_PlasticDish01B2
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 32.000000
+map_Kd sm0025_PlasticDish01B_ALBM.png
+map_Ks sm0025_PlasticDish01B_ALBM.png
+map_bump sm0025_PlasticDish01B_NRMR.png
